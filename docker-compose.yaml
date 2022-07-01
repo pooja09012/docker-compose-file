@@ -4,8 +4,8 @@ services:
     image: "percona/percona-server:8.0"
     ports: 
       - 6603:3306
-    Environment:
-      - MYSQL-ROOT-PASSWORD=root
+    env_file:
+      - .mysql_root_password
   nginx-server:
     - image: nginx:1.13
       ports:
